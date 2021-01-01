@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": ".venv/bin/python3",
+    "python.linting.pylintArgs": [
+        "--max-line-length=88",
+        "--disable=C0111", // Function Docstrings
+    ],
+    "files.exclude": {
+        "**/__pycache__/": true,
+        ".eggs/": true,
+        ".venv/": true,
+        ".pytest_cache": true
+    },
+}
