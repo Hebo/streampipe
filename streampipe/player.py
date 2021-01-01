@@ -1,7 +1,7 @@
 import logging
 import os
-import subprocess
 import pathlib
+import subprocess
 from typing import Optional, Union
 
 DEFAULT_QUALITY = "720,720p60,best"
@@ -21,6 +21,7 @@ def load_config() -> dict[Union[str, str]]:
     config = {}
     with open(rc, "r") as f:
         config["token"] = f.read().strip()
+        logging.debug(f"Found token: {config['token']}")
     return config
 
 
@@ -40,7 +41,7 @@ def format_channel(channel: str) -> str:
 
 class Player:
     """
-    docstring
+    Player loads streamlink and the video player
     """
 
     @classmethod
@@ -84,6 +85,11 @@ class Player:
             del player_env["PYTHONPATH"]
         player_env["PATH"] = "/usr/local/bin"
 
-        # TODO: figure out how to log to logger in realtime
-        ret = subprocess.run(cmd, env=player_env, capture_output=True)
-        logging.info("return info: {}".format(ret))
+        # Want to log in realtime
+        with subprocess.Popen(
+            cmd, env=player_env, stdout=subprocess.PIPE, bufsize=1, text=True
+        ) as p:
+            for line in p.stdout:
+                logging.info(line.removesuffix("\n"))
+            p.communicate()
+            logging.info(f"Player closed with code {p.returncode}")

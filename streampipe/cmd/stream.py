@@ -1,4 +1,5 @@
 import argparse
+import logging
 
 from streampipe.player import Player, format_channel, load_config
 
@@ -11,12 +12,16 @@ parser.add_argument(
     "-p", "--pip", help="Open in Picture in Picture mode", action="store_true"
 )
 
+# Not logging to file because we can see cli output
+logging.basicConfig(level=logging.INFO)
+
+
 def run():
     args = parser.parse_args()
     config = load_config()
-    # print(f"Using oauth token {config['token']}")
-
     stream_url = format_channel(args.channel)
 
-    print("Opening {}".format(stream_url))
-    Player.play(stream_url, quality=args.quality, pip=args.pip, oauth_token=config["token"])
+    # logging.info("Opening {}".format(stream_url))
+    Player.play(
+        stream_url, quality=args.quality, pip=args.pip, oauth_token=config["token"]
+    )
