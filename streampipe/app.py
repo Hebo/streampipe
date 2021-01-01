@@ -15,7 +15,7 @@ def handle_exception(exc_type, exc_value, exc_traceback):
         return
     logging.error("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
 
-
+# TODO: Work out a more appropriate path, or log to syslog
 LOG_PATH = "/tmp/streampipe.log"
 
 

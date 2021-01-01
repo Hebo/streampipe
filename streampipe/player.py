@@ -6,16 +6,15 @@ from typing import Optional, Union
 
 DEFAULT_QUALITY = "720,720p60,best"
 PLAYER_PATH = "/Applications/IINA.app/Contents/MacOS/iina-cli"
-
+CONFIG_FILENAME = ".streampiperc"
 
 def load_config() -> dict[Union[str, str]]:
-    rc_filename = ".streampiperc"
     """
-    docstring
+    load_config loads an OAuth token from the home directory
     """
-    rc = pathlib.Path.home() / rc_filename
+    rc = pathlib.Path.home() / CONFIG_FILENAME
     if not rc.exists():
-        logging.debug(f"No {rc_filename} found")
+        logging.debug(f"No {CONFIG_FILENAME} found")
         return {}
 
     config = {}
