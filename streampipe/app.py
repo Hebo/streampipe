@@ -1,7 +1,3 @@
-# stream.py
-# URL Scheme:
-# twitch://open?channel=hasanabi&quality=720p&pip=false
-#
 import logging
 import sys
 from typing import Union

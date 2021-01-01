@@ -1,4 +1,4 @@
-from streampipe import stream
+from streampipe import app
 
 if __name__ == "__main__":
-    stream.main()
+    app.main()

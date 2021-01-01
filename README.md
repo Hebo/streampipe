@@ -1,8 +1,28 @@
 # Streampipe
 
-Some tools for opening streams in native video players
+Some tools for opening Twitch streams in native video players
 
-## dev
+## CLI tool
+
+Start stream in IINA via the command line
+
+**Examples:**
+```bash
+stream kitboga
+stream https://www.twitch.tv/kitboga 720p
+```
+
+## streampipe.app
+
+MacOS app that handles `twitch://` urls and loads streams in IINA.
+
+**URL Examples:**
+```
+twitch://open?channel=hasanabi
+twitch://open?channel=hasanabi&quality=720p&pip=false
+```
+
+### Development
 
 build (alias to current dir)
 
