@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "streampipe"
-version = "0.2.1"
+version = "0.2.2"
 description = ""
 authors = ["Hebo <hebo@hey.com>"]
 
@@ -10,6 +10,7 @@ python = "^3.9"
 [tool.poetry.dev-dependencies]
 py2app = "^0.22"
 black = {version = "^20.8b1", allow-prereleases = true}
+pytest = "^6.2.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

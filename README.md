@@ -17,43 +17,42 @@ stream https://www.twitch.tv/kitboga 720p
 MacOS app that handles `twitch://` urls and loads streams in IINA.
 
 **URL Examples:**
-```
+```bash
 twitch://open?channel=hasanabi
 twitch://open?channel=hasanabi&quality=720p&pip=false
 ```
 
 ### Development
 
-build (alias to current dir)
+Build for development (.app aliased to dev source files)
 
 ```
-python setup.py py2app -A
+make build
 ```
 
-argv emulation converts url to argv param
-
-testing
-
+Testing
 ```
-/Users/hebo/code/streampipe/dist/streampipe.app/Contents/MacOS/streampipe twitch://open?channel=hasanabi
+./dist/streampipe.app/Contents/MacOS/streampipe twitch://open?channel=hasanabi
 ```
 
-run directly
+Run directly
 ```
 python main.py "twitch://open?channel=hasanabi&quality=720p&pip=false"
 ```
 
-
-actual run
+Run via URL handler
 ```
 open twitch://open?channel=hasanabi
 ```
 
 
-## prod
+### Building App
+
+
+To build the self-contained streampipe.app
 
 ```
-python setup.py py2app --argv-emulation
+make build-prod
 ```
 
 ### Logs

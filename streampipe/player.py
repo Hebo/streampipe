@@ -8,6 +8,7 @@ DEFAULT_QUALITY = "720,720p60,best"
 PLAYER_PATH = "/Applications/IINA.app/Contents/MacOS/iina-cli"
 CONFIG_FILENAME = ".streampiperc"
 
+
 def load_config() -> dict[Union[str, str]]:
     """
     load_config loads an OAuth token from the home directory
