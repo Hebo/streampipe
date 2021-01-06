@@ -1,9 +1,7 @@
 import argparse
 import logging
 
-from streampipe.player import Player, format_channel, load_config
-
-DEFAULT_QUALITY = "720p"
+from streampipe.player import Player, format_channel, load_config, DEFAULT_QUALITY
 
 parser = argparse.ArgumentParser()
 parser.add_argument("channel", help="Twitch channel name")
