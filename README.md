@@ -57,7 +57,7 @@ make build-prod
 
 ### Logs
 
-Logs are sent to `~/Library/Logs/streampipe.log`
+Logs for `streampipe.app` are sent to `~/Library/Logs/streampipe.log`. Logs for `stream` cli app are only sent to the console.
 
 ```
 tail -f ~/Library/Logs/streampipe.log
