@@ -57,8 +57,8 @@ make build-prod
 
 ### Logs
 
-Logs are sent to `/var/log/streampipe.log`
+Logs are sent to `~/Library/Logs/streampipe.log`
 
 ```
-tail -f /tmp/streampipe.log
+tail -f ~/Library/Logs/streampipe.log
 ```

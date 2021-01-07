@@ -1,9 +1,10 @@
 import logging
 import sys
-from typing import Union
 import urllib.parse
+from pathlib import Path
+from typing import Union
 
-from .player import format_channel, Player, load_config
+from .player import Player, format_channel, load_config
 
 
 def handle_exception(exc_type, exc_value, exc_traceback):
@@ -16,8 +17,7 @@ def handle_exception(exc_type, exc_value, exc_traceback):
     logging.error("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
 
 # TODO: Work out a more appropriate path, or log to syslog
-LOG_PATH = "/tmp/streampipe.log"
-
+LOG_PATH = Path.home() / "Library/Logs/streampipe.log"
 
 def main():
     logging.basicConfig(filename=LOG_PATH, level=logging.INFO)
