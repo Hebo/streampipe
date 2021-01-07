@@ -4,7 +4,7 @@ Some tools for opening Twitch streams in native video players
 
 ## CLI tool
 
-Start stream in IINA via the command line
+Start stream in [IINA](https://iina.io) via the command line
 
 **Examples:**
 ```bash
