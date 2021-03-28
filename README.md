@@ -17,13 +17,12 @@ stream https://www.twitch.tv/kitboga 720p
 MacOS app that handles `twitch://` urls and loads streams in IINA.
 
 **URL Examples:**
-```bash
+```
 twitch://open?channel=hasanabi
 twitch://open?channel=hasanabi&quality=720p&pip=false
 ```
 
 ### Development
-
 Build for development (.app aliased to dev source files)
 
 ```
@@ -47,6 +46,12 @@ open twitch://open?channel=hasanabi
 
 
 ### Building App
+
+Need to make sure Python is installed with frameworks:
+
+```
+env PYTHON_CONFIGURE_OPTS="--enable-framework" asdf install python
+```
 
 
 To build the self-contained streampipe.app

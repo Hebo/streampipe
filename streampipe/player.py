@@ -6,10 +6,11 @@ from typing import Optional, Union
 
 DEFAULT_QUALITY = "720,720p60,best"
 PLAYER_PATH = "/Applications/IINA.app/Contents/MacOS/iina-cli"
+STREAMLINK_PATH = "/usr/local/bin/streamlink"
 CONFIG_FILENAME = ".streampiperc"
 
 
-def load_config() -> dict[Union[str, str]]:
+def load_config() -> dict[str, str]:
     """
     load_config loads an OAuth token from the home directory
     """
@@ -66,7 +67,7 @@ class Player:
         # streamlink will add the filename if we don't add it to the args, so we add it
         # in a way where it won't be parsed by iina
         cmd = [
-            "streamlink",
+            STREAMLINK_PATH,
             "--http-header=Authorization=OAuth {}".format(oauth_token),
             "--player={}".format(PLAYER_PATH),
             "--player-args=--stdin {pip} {{filename}}-ignorethis".format(pip=iina_pip),
@@ -85,6 +86,7 @@ class Player:
             del player_env["PYTHONPATH"]
         player_env["PATH"] = "/usr/local/bin"
 
+
         # Want to log in realtime
         with subprocess.Popen(
             cmd, env=player_env, stdout=subprocess.PIPE, bufsize=1, text=True
@@ -92,4 +94,4 @@ class Player:
             for line in p.stdout:
                 logging.info(line.removesuffix("\n"))
             p.communicate()
-            logging.info(f"Player closed with code {p.returncode}")
+            logging.info(f"Streamlink closed with code {p.returncode}")
