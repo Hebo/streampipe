@@ -5,7 +5,7 @@ description = ""
 authors = ["Hebo <hebo@hey.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">= 3.8.9"
 
 [tool.poetry.dev-dependencies]
 py2app = "^0.22"
