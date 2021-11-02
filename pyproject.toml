@@ -8,7 +8,8 @@ authors = ["Hebo <hebo@hey.com>"]
 python = ">= 3.8.9"
 
 [tool.poetry.dev-dependencies]
-py2app = "^0.22"
+# 0.27 not added to pip yet
+py2app = { git = "https://github.com/ronaldoussoren/py2app.git", branch = "master" }
 black = {version = "^20.8b1", allow-prereleases = true}
 pytest = "^6.2.1"
 

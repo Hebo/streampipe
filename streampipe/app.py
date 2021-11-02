@@ -26,7 +26,7 @@ def main():
     sys.excepthook = handle_exception
 
     if not len(sys.argv) >= 2:
-        logging.error("Not enough arguments")
+        logging.error(f"Not enough arguments, got: {sys.argv}")
         sys.exit()
 
     config = load_config()

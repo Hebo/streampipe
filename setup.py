@@ -29,7 +29,7 @@ OPTIONS = {
         ],
     ),
     "iconfile": "icon.icns",
-    "argv_emulation": 1,
+    "argv_emulation": True,
 }
 
 

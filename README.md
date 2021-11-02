@@ -60,6 +60,19 @@ To build the self-contained streampipe.app
 make build-prod
 ```
 
+### AppleScript Shim Workaround
+
+`argv_emulation` is broken in py2app (as it does), so use an Applescript to invoke the app.
+
+Limitations:
+- Hardcoded paths in .scpt, including homebrew python
+- Janky AF
+
+Edit AppleScript Shim:
+```
+open StreamPipe.app/Contents/Resources/Scripts/main.scpt
+```
+
 ### Logs
 
 Logs for `streampipe.app` are sent to `~/Library/Logs/streampipe.log`. Logs for `stream` cli app are only sent to the console.
