@@ -12,9 +12,9 @@ stream kitboga
 stream https://www.twitch.tv/kitboga 720p
 ```
 
-## streampipe.app
+## StreamPipe.app
 
-MacOS app that handles `twitch://` urls and loads streams in IINA.
+Applescript .app to handle `twitch://` urls and load streams in IINA.
 
 **URL Examples:**
 ```
@@ -22,16 +22,17 @@ twitch://open?channel=hasanabi
 twitch://open?channel=hasanabi&quality=720p&pip=false
 ```
 
+Limitations:
+- Hardcoded paths in .scpt, including homebrew python
+- Janky AF
+- Logging in .app is not easily accessible
+- TODO: Replace with a Swift app one day...
+
 ### Development
-Build for development (.app aliased to dev source files)
 
+Edit AppleScript Shim
 ```
-make build
-```
-
-Testing
-```
-./dist/streampipe.app/Contents/MacOS/streampipe twitch://open?channel=hasanabi
+open StreamPipe.app/Contents/Resources/Scripts/main.scpt
 ```
 
 Run directly
@@ -48,35 +49,11 @@ open twitch://open?channel=hasanabi
 ### Building App
 
 Need to make sure Python is installed with frameworks:
-
 ```
 env PYTHON_CONFIGURE_OPTS="--enable-framework" asdf install python
 ```
 
-
 To build the self-contained streampipe.app
-
 ```
 make build-prod
-```
-
-### AppleScript Shim Workaround
-
-`argv_emulation` is broken in py2app (as it does), so use an Applescript to invoke the app.
-
-Limitations:
-- Hardcoded paths in .scpt, including homebrew python
-- Janky AF
-
-Edit AppleScript Shim:
-```
-open StreamPipe.app/Contents/Resources/Scripts/main.scpt
-```
-
-### Logs
-
-Logs for `streampipe.app` are sent to `~/Library/Logs/streampipe.log`. Logs for `stream` cli app are only sent to the console.
-
-```
-tail -f ~/Library/Logs/streampipe.log
 ```

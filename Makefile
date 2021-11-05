@@ -1,14 +1,9 @@
-.PHONY: test build build-prod
+.PHONY: test build
 .DEFAULT: build
 
 
 build:
-	# Alias built script to development folder for quick
-	# testing without rebuilding
-	poetry run python setup.py py2app -A
-
-build-prod:
-	poetry run python setup.py py2app
+	echo "nothing to do"
 
 test:
 	poetry run pytest

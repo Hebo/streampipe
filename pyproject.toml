@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "streampipe"
-version = "0.2.2"
+version = "0.3.2"
 description = ""
 authors = ["Hebo <hebo@hey.com>"]
 
@@ -8,8 +8,6 @@ authors = ["Hebo <hebo@hey.com>"]
 python = ">= 3.8.9"
 
 [tool.poetry.dev-dependencies]
-# 0.27 not added to pip yet
-py2app = { git = "https://github.com/ronaldoussoren/py2app.git", branch = "master" }
 black = {version = "^20.8b1", allow-prereleases = true}
 pytest = "^6.2.1"
 
