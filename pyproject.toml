@@ -1,15 +1,16 @@
 [tool.poetry]
 name = "streampipe"
-version = "0.3.2"
+version = "0.4.0"
 description = ""
-authors = ["Hebo <hebo@hey.com>"]
+authors = ["Hebo <hi@salt.gg>"]
 
 [tool.poetry.dependencies]
-python = ">= 3.8.9"
+python = ">= 3.9"
 
 [tool.poetry.dev-dependencies]
-black = {version = "^20.8b1", allow-prereleases = true}
+black = {version = "^22.10", allow-prereleases = true}
 pytest = "^6.2.1"
+ipdb = "^0.13.9"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

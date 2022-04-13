@@ -19,6 +19,7 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 # TODO: Work out a more appropriate path, or log to syslog
 LOG_PATH = Path.home() / "Library/Logs/streampipe.log"
 
+# Called from URL Handler
 def main():
     logging.basicConfig(filename=LOG_PATH, level=logging.INFO)
     logging.getLogger().addHandler(logging.StreamHandler())

@@ -30,6 +30,11 @@ Limitations:
 
 ### Development
 
+Install from workspace
+```
+python3 -m pip install .
+```
+
 Edit AppleScript Shim
 ```
 open StreamPipe.app/Contents/Resources/Scripts/main.scpt
@@ -43,6 +48,11 @@ python main.py "twitch://open?channel=hasanabi&quality=720p&pip=false"
 Run via URL handler
 ```
 open twitch://open?channel=hasanabi
+```
+
+Run via CLI Script
+```
+poetry run stream pgl_dota2en2
 ```
 
 
