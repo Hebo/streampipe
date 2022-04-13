@@ -5,7 +5,8 @@ import subprocess
 from typing import Optional, Union
 
 DEFAULT_QUALITY = "720,720p60,best"
-PLAYER_PATH = "/Applications/IINA.app/Contents/MacOS/iina-cli"
+# PLAYER_PATH = "/Applications/IINA.app/Contents/MacOS/iina-cli"
+PLAYER_PATH = "/Applications/VLC.app/Contents/MacOS/VLC"
 STREAMLINK_PATH = "/opt/homebrew/bin/streamlink"
 CONFIG_FILENAME = ".streampiperc"
 
@@ -69,8 +70,8 @@ class Player:
         cmd = [
             STREAMLINK_PATH,
             "--http-header=Authorization=OAuth {}".format(oauth_token),
-            "--player={}".format(PLAYER_PATH),
-            "--player-args=--stdin {pip} {{filename}}-ignorethis".format(pip=iina_pip),
+            # "--player={}".format(PLAYER_PATH),
+            # "--player-args=--stdin {pip} {{filename}}-ignorethis".format(pip=iina_pip),
             stream_url,
             quality
             # Superseded by using oauth token

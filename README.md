@@ -30,6 +30,11 @@ Limitations:
 
 ### Development
 
+Install from workspace
+```
+python3 -m pip install .
+```
+
 Edit AppleScript Shim
 ```
 open StreamPipe.app/Contents/Resources/Scripts/main.scpt
